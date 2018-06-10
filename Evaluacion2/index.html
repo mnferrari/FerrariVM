@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp">
+<head>
+
+    <link href="Client/styles/bootstrap.min.css" rel="stylesheet" />
+    <script src="Client/Scripts/jquery-3.1.1.js"></script>
+    <script src="Client/Scripts/tether.min.js"></script>
+    <script src="Client/Scripts/bootstrap.min.js"></script>
+    <script src="Client/Scripts/angular.min.js"></script>
+    <script src="Client/Scripts/angular-resource.js"></script>
+    <script src="Client/Scripts/xml2json.js"></script>
+    <script src="Client/app.js"></script>
+    <script src="Client/Services/userService.js"></script>
+    <script src="Client/Controller/userController.js"></script>
+</head>
+<body ng-controller="myCtrl">
+    <div class="container">
+        <h2>Add, update or modify users</h2>
+        <br />
+        <div class="bd-example" data-example-id="">
+            <div id="formularioControl">
+                <div ng-hide="nav==1||nav==4">
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-2 col-form-label">Name</label>
+                        <div class="col-4">
+                            <input class="form-control" type="text" id="nombre-input" ng-model="name">
+                        </div>
+                        <label for="example-text-input" class="col-2 col-form-label">Last Name</label>
+                        <div class="col-4">
+                            <input class="form-control" type="text" id="apellido-input" ng-model="lastName">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-2 col-form-label">Email</label>
+                        <div class="col-4">
+                            <input class="form-control" type="text" id="email-input" ng-model="mail">
+                        </div>
+                        <label for="example-password-input" class="col-2 col-form-label">Password</label>
+                        <div class="col-4">
+                            <input class="form-control" type="password" id="password-input" ng-model="password">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="form-group row">
+                <div class="col-1">
+                    <button type="button" ng-show="!selectedToUpdate" class="btn btn-outline-success btn-sm" ng-disabled="!name || !lastName || !mail || !password" ng-click="createUser()">Add user</button>
+                </div>
+                <div class="col-1">
+                    <button type="button" ng-show="selectedToUpdate" class="btn btn-outline-warning btn-sm" ng-click="updateUser()" ng-disabled="!name && !lastName && !mail && !password">Udate user</button>
+                </div>
+                <div class="col-1">
+                    <button type="button" ng-show="selectedToUpdate" class="btn btn-outline-danger btn-sm" ng-click="cancelEdit()">Cancel update</button>
+                </div>
+          </div>
+                <table class="table" ng-show="!selectedToUpdate">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in data">
+                            <td>{{item.Name}}</td>
+                            <td>{{item.LastName}}</td>
+                            <td>{{item.Email}}</td>
+                            <td>{{item.Password}}</td>
+                            <td>
+                                <button type="button" class="btn btn-outline-warning btn-sm" ng-click="editUser(item)">Udate user</button>
+                                <span class="preloader"></span>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-outline-danger btn-sm" ng-click="deleteUser(item.Id)">Delete </button>
+                                <span class="preloader"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+</body>
+</html>

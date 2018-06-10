@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MFerrari", "Evaluacion2\MFerrari.csproj", "{BEDD46FE-07A5-40CB-8C2D-5138BCC6EF30}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEDD46FE-07A5-40CB-8C2D-5138BCC6EF30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEDD46FE-07A5-40CB-8C2D-5138BCC6EF30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEDD46FE-07A5-40CB-8C2D-5138BCC6EF30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEDD46FE-07A5-40CB-8C2D-5138BCC6EF30}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3170D5DC-B500-494E-BD60-B55C947D6C70}
+	EndGlobalSection
+EndGlobal
